@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Feadback
 
-# Register your models here.
+
+class AdminFeadback(admin.ModelAdmin):
+    list_display = ("name", "email")
+
+admin.site.register(Feadback, AdminFeadback)
